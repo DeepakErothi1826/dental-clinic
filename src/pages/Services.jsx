@@ -12,26 +12,32 @@ const Services = () => {
   const servicesList = [
     {
       category: 'General Dentistry',
+      image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600',
       items: ['Dental Check-ups', 'Professional Cleaning', 'Fluoride Treatment', 'Dental Sealants', 'Oral Cancer Screening']
     },
     {
       category: 'Cosmetic Dentistry',
+      image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=600',
       items: ['Teeth Whitening', 'Veneers', 'Smile Makeovers', 'Bonding', 'Gum Contouring']
     },
     {
       category: 'Restorative Dentistry',
+      image: 'https://images.unsplash.com/photo-1629161245041-8f64db7b8783?auto=format&fit=crop&q=80&w=600',
       items: ['Dental Fillings', 'Root Canal Treatment', 'Crowns & Bridges', 'Inlays & Onlays', 'Dental Implants']
     },
     {
       category: 'Orthodontics',
+      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600',
       items: ['Metal Braces', 'Ceramic Braces', 'Invisible Aligners', 'Lingual Braces', 'Retainers']
     },
     {
       category: 'Pediatric Dentistry',
+      image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600',
       items: ['Baby Teeth Care', 'Fluoride Treatments', 'Dental Sealants', 'Habit Breaking', 'Emergency Care']
     },
     {
       category: 'Emergency Care',
+      image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=600',
       items: ['Toothache Relief', 'Broken Tooth Repair', 'Knocked Out Tooth', 'Dental Abscess', 'Lost Filling/Crown']
     }
   ];
@@ -51,8 +57,13 @@ const Services = () => {
 
   return (
     <div className="services-page-wrapper">
-      <section className="bg-blue text-white" style={{ paddingTop: '8rem' }}>
-        <div className="container">
+      <section className="bg-blue text-white" style={{ paddingTop: '8rem', paddingBottom: '4rem', position: 'relative', overflow: 'hidden' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1600" 
+          alt="Services Background" 
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.2, display: 'block' }} 
+        />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 className="section-title text-center text-white">Our Premium Services</h2>
           <p className="vision-text text-center" style={{ opacity: 0.8, maxWidth: '700px', margin: '0 auto' }}>
             We leverage cutting-edge technology to ensure the highest standards of safety, precision, and comfort for every patient.
@@ -93,7 +104,7 @@ const Services = () => {
                 style={{ overflow: 'hidden', padding: 0, background: 'rgba(255,255,255,0.05)' }}
               >
                 <div style={{ height: '200px', overflow: 'hidden' }}>
-                  <img src={tool.image} alt={tool.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={tool.image} alt={tool.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div style={{ padding: '1.5rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '0.5rem' }}>
@@ -132,15 +143,20 @@ const Services = () => {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '3rem' }}>
             {servicesList.map((s, i) => (
-              <div key={i} style={{ background: 'white', padding: '2rem', borderRadius: '1.5rem', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', color: 'var(--primary-teal)' }}>{s.category}</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  {s.items.map((item, j) => (
-                    <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                      <CheckCircle size={18} className="text-teal" /> {item}
-                    </li>
-                  ))}
-                </ul>
+              <div key={i} style={{ background: 'white', padding: '0', borderRadius: '1.5rem', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', overflow: 'hidden' }}>
+                <div style={{ height: '150px', overflow: 'hidden' }}>
+                  <img src={s.image} alt={s.category} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '2rem' }}>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', color: 'var(--primary-teal)' }}>{s.category}</h3>
+                  <ul style={{ listStyle: 'none', padding: 0 }}>
+                    {s.items.map((item, j) => (
+                      <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
+                        <CheckCircle size={18} className="text-teal" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -195,9 +211,13 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="services-cta bg-blue text-white" style={{ padding: '6rem 0', textAlign: 'center' }}>
-        <div className="container">
+      <section className="services-cta bg-blue text-white" style={{ padding: '6rem 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1600" 
+          alt="Clinic Background" 
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.15, display: 'block' }} 
+        />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 className="section-title text-white">Experience Premium Dental Care</h2>
           <p className="vision-text text-white" style={{ opacity: 0.9, maxWidth: '600px', margin: '0 auto 2rem' }}>
             Book your appointment today and discover why we're Raipur's most trusted dental clinic.

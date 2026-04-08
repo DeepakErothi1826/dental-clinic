@@ -238,7 +238,7 @@ const Home = () => {
               <p style={{ fontSize: '1rem', fontStyle: 'italic', marginBottom: '1.5rem' }}>"Excellent treatment! The staff was very polite and caring. Dr. Priya made me feel comfortable throughout my root canal treatment. Highly recommended!"</p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{ width: '50px', height: '50px', borderRadius: '50%', overflow: 'hidden' }}>
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Amit शर्मा" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Amit Sharma" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div><h4 style={{ fontSize: '1rem' }}>Amit Sharma</h4><p style={{ fontSize: '0.8rem', color: '#6B7280' }}>Root Canal Patient</p></div>
               </div>
@@ -248,7 +248,7 @@ const Home = () => {
               <p style={{ fontSize: '1rem', fontStyle: 'italic', marginBottom: '1.5rem' }}>"Superb clinic with all modern facilities. Got my dental implants done here and the results are amazing. The team is professional and caring."</p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{ width: '50px', height: '50px', borderRadius: '50%', overflow: 'hidden' }}>
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Priya Reddy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Priya Reddy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div><h4 style={{ fontSize: '1rem' }}>Priya Reddy</h4><p style={{ fontSize: '0.8rem', color: '#6B7280' }}>Implant Patient</p></div>
               </div>
@@ -258,7 +258,7 @@ const Home = () => {
               <p style={{ fontSize: '1rem', fontStyle: 'italic', marginBottom: '1.5rem' }}>"My daughter got her braces from Dr. Amit and the transformation is incredible. Great orthodontist and very patient with kids. Thank you Mahima Dental!"</p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{ width: '50px', height: '50px', borderRadius: '50%', overflow: 'hidden' }}>
-                    <img src="https://images.unsplash.com/photo-1600180758830-6e85ab75374c?auto=format&fit=crop&q=80&w=100" alt="Rahul Verma" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="https://images.unsplash.com/photo-1600180758830-6e85ab75374c?auto=format&fit=crop&q=80&w=100" alt="Rahul Verma" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div><h4 style={{ fontSize: '1rem' }}>Rahul Verma</h4><p style={{ fontSize: '0.8rem', color: '#6B7280' }}>Parent of Braces Patient</p></div>
               </div>
@@ -291,8 +291,8 @@ const Home = () => {
               className="glass-morphism" 
               style={{ padding: '0', borderRadius: '2rem', background: 'white', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}
             >
-              <div style={{ height: '220px', overflow: 'hidden' }}>
-                <img src="https://images.unsplash.com/photo-1629161245041-8f64db7b8783?q=80&w=800" alt="Dental Implants" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <div style={{ height: '220px', overflow: 'hidden', background: '#f8fafc' }}>
+                <img src="https://images.unsplash.com/photo-1629161245041-8f64db7b8783?q=80&w=800" alt="Professional Dental Implant 3D Anatomy Illustration" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '1rem' }} />
               </div>
               <div style={{ padding: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.2rem' }}>
@@ -400,4 +400,16 @@ const Home = () => {
             <FAQItem 
               question="How do I book an emergency appointment?" 
               answer="For emergencies like acute toothache or trauma, please call us directly at our Raipur clinic or WhatsApp us. We prioritize emergency cases for same-day treatment."
-            /
+            />
+            <FAQItem 
+              question="Do you offer EMI or flexible payment options?" 
+              answer="Yes, we offer interest-free EMI options for major treatments like implants and braces. Our goal is to make premium dental care accessible to everyone."
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Home;

@@ -15,10 +15,21 @@ const Contact = () => {
     'From Airport: 15 km - Take NH53 towards city center'
   ];
 
+  const reviews = [
+    { name: "Rajesh Kumar", text: "Best dental clinic in Raipur! The doctors are very professional and the facility is top-notch. Highly recommended!", image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100' },
+    { name: "Anjali Singh", text: "Got my braces done here and the results are amazing. The team is very caring and explained everything clearly.", image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100' },
+    { name: "Vikram Patel", text: "Excellent service! Painless root canal treatment. The clinic is very clean and staff is extremely friendly.", image: 'https://images.unsplash.com/photo-1600180758830-6e85ab75374c?auto=format&fit=crop&q=80&w=100' }
+  ];
+
   return (
     <div className="contact-page-wrapper">
-      <section className="bg-light-blue" style={{ paddingTop: '8rem', paddingBottom: '4rem' }}>
-        <div className="container">
+      <section className="bg-light-blue" style={{ paddingTop: '8rem', paddingBottom: '4rem', position: 'relative', overflow: 'hidden' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1600" 
+          alt="Contact Background" 
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.15, display: 'block' }} 
+        />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 className="section-title text-center">Contact Us</h2>
           <p className="vision-text text-center">We're here to help you achieve your best smile. Reach out to book an appointment or ask a question.</p>
         </div>
@@ -53,7 +64,7 @@ const Contact = () => {
 
           <div className="contact-info-section">
             <div style={{ borderRadius: '2rem', overflow: 'hidden', marginBottom: '2.5rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-               <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Clinic Interior" style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+               <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Clinic Interior" style={{ width: '100%', height: '300px', objectFit: 'cover', display: 'block' }} />
             </div>
             <h2 className="section-title" style={{ fontSize: '1.8rem' }}>Visit Our Clinic</h2>
             <div className="info-list" style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -144,18 +155,17 @@ const Contact = () => {
           </div>
           <p className="text-center" style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>4.9/5 based on 200+ Google Reviews</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '3rem' }}>
-            <div className="glass-morphism" style={{ padding: '2rem', borderRadius: '1rem' }}>
-              <p style={{ fontStyle: 'italic', marginBottom: '1rem' }}>"Best dental clinic in Raipur! The doctors are very professional and the facility is top-notch. Highly recommended!"</p>
-              <p style={{ fontWeight: '600' }}>- Rajesh Kumar</p>
-            </div>
-            <div className="glass-morphism" style={{ padding: '2rem', borderRadius: '1rem' }}>
-              <p style={{ fontStyle: 'italic', marginBottom: '1rem' }}>"Got my braces done here and the results are amazing. The team is very caring and explained everything clearly."</p>
-              <p style={{ fontWeight: '600' }}>- Anjali Singh</p>
-            </div>
-            <div className="glass-morphism" style={{ padding: '2rem', borderRadius: '1rem' }}>
-              <p style={{ fontStyle: 'italic', marginBottom: '1rem' }}>"Excellent service! Painless root canal treatment. The clinic is very clean and staff is extremely friendly."</p>
-              <p style={{ fontWeight: '600' }}>- Vikram Patel</p>
-            </div>
+            {reviews.map((r, i) => (
+              <div key={i} className="glass-morphism" style={{ padding: '2rem', borderRadius: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  <div style={{ width: '50px', height: '50px', borderRadius: '50%', overflow: 'hidden' }}>
+                    <img src={r.image} alt={r.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </div>
+                  <div><h4 style={{ fontSize: '1rem' }}>{r.name}</h4></div>
+                </div>
+                <p style={{ fontStyle: 'italic', marginBottom: '1rem' }}>"{r.text}"</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -165,7 +175,7 @@ const Contact = () => {
         <img 
           src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200" 
           alt="Map Location" 
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6 }} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6, display: 'block' }} 
         />
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center' }}>
           <div style={{ width: '80px', height: '80px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>

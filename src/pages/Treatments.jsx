@@ -52,11 +52,13 @@ const Treatments = () => {
 ,
     {
       title: 'Preventive Dentistry',
+      image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800',
       content: 'Regular dental check-ups and cleanings are the foundation of oral health. Our preventive care includes professional cleaning, fluoride treatment, sealants, and oral cancer screening.',
       points: ['Professional cleaning', 'Fluoride treatment', 'Dental sealants', 'Oral cancer screening']
     },
     {
       title: 'Dentures & Partials',
+      image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800',
       content: 'We craft comfortable, natural-looking dentures using premium materials. Our denture solutions include flexible partials, implant-supported dentures, and full arch restorations.',
       points: ['Flexible partials', 'Implant-supported options', 'Same-day repairs', 'Natural appearance']
     }
@@ -72,8 +74,13 @@ const Treatments = () => {
 
   return (
     <div className="treatments-page-wrapper">
-      <section className="bg-light-blue" style={{ paddingTop: '8rem', paddingBottom: '4rem' }}>
-        <div className="container">
+      <section className="bg-light-blue" style={{ paddingTop: '8rem', paddingBottom: '4rem', position: 'relative', overflow: 'hidden' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1600" 
+          alt="Treatments Background" 
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.15, display: 'block' }} 
+        />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 className="section-title text-center">Available Treatments</h2>
           <p className="vision-text text-center" style={{ maxWidth: '700px', margin: '0 auto' }}>
             From preventative care to advanced surgical procedures, we offer a comprehensive suite of dental services using state-of-the-art tools.
