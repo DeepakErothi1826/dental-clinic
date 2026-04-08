@@ -46,7 +46,7 @@ const Layout = () => {
           <Link to="/" className="logo-link">
             <div className="logo-section">
               <div className="logo-icon-wrapper" style={{ width: '60px', height: '60px' }}>
-                <img src="/logo.png" alt="Mahima Dental Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                <img src="/MAHIMA-DENTAL/logo.png" alt="Mahima Dental Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               </div>
               <div className="logo-text">
                 <h1 className="logo-title" style={{ fontSize: '1.8rem' }}>MAHIMA <span className="text-teal">DENTAL</span></h1>
@@ -78,7 +78,7 @@ const Layout = () => {
           <div className="footer-info">
             <div className="logo-section footer-logo-section" style={{ marginBottom: '1.5rem', gap: '1rem' }}>
               <div className="logo-icon-wrapper" style={{ background: 'rgba(255,255,255,0.1)', padding: '0.5rem', width: '50px', height: '50px' }}>
-                <img src="/logo.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+                <img src="/MAHIMA-DENTAL/logo.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
               </div>
               <h2 className="footer-logo" style={{ marginBottom: 0, fontSize: '1.5rem' }}>MAHIMA DENTAL CARE</h2>
             </div>
