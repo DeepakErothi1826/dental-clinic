@@ -291,8 +291,8 @@ const Home = () => {
               className="glass-morphism" 
               style={{ padding: '0', borderRadius: '2rem', background: 'white', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}
             >
-              <div style={{ height: '220px', overflow: 'hidden', background: '#f8fafc' }}>
-                <img src="https://images.unsplash.com/photo-1629161245041-8f64db7b8783?q=80&w=800" alt="Professional Dental Implant 3D Anatomy Illustration" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '1rem' }} />
+              <div style={{ height: '220px', overflow: 'hidden' }}>
+                <img src="https://images.unsplash.com/photo-1629161245041-8f64db7b8783?q=80&w=800" alt="Dental Implants" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
               <div style={{ padding: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.2rem' }}>

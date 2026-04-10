@@ -9,7 +9,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/MAHIMA-DENTAL">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
