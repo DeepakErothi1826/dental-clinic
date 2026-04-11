@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion, useScroll, useScroll as useScrollRef } from 'framer-motion';
 import { 
   Star, 
@@ -7,13 +8,16 @@ import {
   Instagram, 
   Facebook, 
   Twitter,
-  ChevronRight
+  ChevronRight,
+  Menu,
+  X
 } from 'lucide-react';
 import { NavLink, Link, Outlet } from 'react-router-dom';
 import '../App.css';
 
 const Layout = () => {
   const { scrollYProgress } = useScroll();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="app-wrapper">
@@ -63,8 +67,25 @@ const Layout = () => {
             <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>Contact Us</NavLink>
           </nav>
 
-          <Link to="/contact" className="btn btn-primary">BOOK APPOINTMENT</Link>
+          <Link to="/contact" className="btn btn-primary hide-mobile">BOOK APPOINTMENT</Link>
+          
+          <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+        
+        {mobileMenuOpen && (
+          <div className="mobile-nav">
+            <nav>
+              <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
+              <NavLink to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</NavLink>
+              <NavLink to="/treatments" onClick={() => setMobileMenuOpen(false)}>Treatments</NavLink>
+              <NavLink to="/services" onClick={() => setMobileMenuOpen(false)}>Our Services</NavLink>
+              <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</NavLink>
+              <Link to="/contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>BOOK APPOINTMENT</Link>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Page Content */}
